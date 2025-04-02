@@ -25,11 +25,17 @@ jobs:
         with:
           cmd: |
             yq e '.auths | to_entries[] | 
-                  "docker login \(.key) -u \(.username) -p \(.password)"' auths.yaml | sh
+            "docker login \(.key) -u \(.username) -p \(.password)"' auths.yaml | 
+            while read cmd; do
+                eval "$cmd"
+            done
 
       - name: Sync Images (Generate & Execute)
         uses: mikefarah/yq@v4
         with:
           cmd: |
             yq e '.images[] | 
-                  "skopeo copy --all docker://\(.source) docker://\(.target)"' images.yaml | sh
+            "skopeo copy --all docker://\(.source) docker://\(.target)"' images.yaml | 
+            while read cmd; do
+                eval "$cmd"
+            done
