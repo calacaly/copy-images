@@ -26,3 +26,4 @@ jobs:
       - name: Sync
         run: |
           bash sync.sh
+        continue-on-error: false

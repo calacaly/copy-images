@@ -1,20 +1,21 @@
 #!/bin/bash
+set -e  # 确保脚本遇到错误时立即退出
 
 # 解析 auths.yaml 并登录到每个 registry
-for auth in $(yq e '.auths[] | {domain: .domain, username: .username, password: .password}' auths.yaml -o=json); do
-    domain=$(echo $auth | jq -r '.domain')
-    username=$(echo $auth | jq -r '.username')
-    password=$(echo $auth | jq -r '.password')
+while IFS= read -r line; do
+    domain=$(echo "$line" | yq e '.domain' -)
+    username=$(echo "$line" | yq e '.username' -)
+    password=$(echo "$line" | yq e '.password' -)
 
     echo "Logging into $domain as $username"
     echo "$password" | skopeo login --username "$username" --password-stdin "$domain"
-done
+done < <(yq e '.auths[]' auths.yaml)
 
 # 解析 images.yaml 并同步镜像
-for image in $(yq e '.images[] | {source: .source, target: .target}' images.yaml -o=json); do
-    source=$(echo $image | jq -r '.source')
-    target=$(echo $image | jq -r '.target')
+while IFS= read -r line; do
+    source=$(echo "$line" | yq e '.source' -)
+    target=$(echo "$line" | yq e '.target' -)
 
     echo "Syncing image from $source to $target"
     skopeo sync --src docker --dest docker "$source" "$target"
-done
+done < <(yq e '.images[]' images.yaml)
