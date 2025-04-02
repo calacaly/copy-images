@@ -18,24 +18,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Tools
         run: |
-          sudo apt-get update && sudo apt-get install -y skopeo
+          sudo apt-get update && sudo apt-get install -y skopeo yq
 
       - name: Generate and Execute Login Commands
-        uses: mikefarah/yq@v4
-        with:
-          cmd: |
-            yq e '.auths | to_entries[] | 
-            "docker login \(.key) -u \(.username) -p \(.password)"' auths.yaml | 
-            while read cmd; do
-                eval "$cmd"
-            done
-
-      - name: Sync Images (Generate & Execute)
-        uses: mikefarah/yq@v4
-        with:
-          cmd: |
-            yq e '.images[] | 
-            "skopeo copy --all docker://\(.source) docker://\(.target)"' images.yaml | 
-            while read cmd; do
-                eval "$cmd"
-            done
+        run: |
+          bash sync.sh
