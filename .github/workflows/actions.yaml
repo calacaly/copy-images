@@ -17,13 +17,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Tools
         run: |
-          sudo apt-get update && sudo apt-get install -y yq skopeo
+          sudo apt-get remove -y yq  # 移除旧版本的 yq（如存在）
+          sudo apt-get update && sudo apt-get install -y skopeo
+          curl -sL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/bin/yq
+          sudo chmod +x /usr/bin/yq
 
       - name: Parse Images Configuration
         id: parse_images
         run: |
           # 提取所有镜像配置（source 和 target）
-          images=$(yq e '.images[] | {source: .source, target: .target}' images.yaml)
+           images=$(yq e '.images[] | {source: .source, target: .target}' images.yaml)
           echo "::set-output name=images::$images"
 
       - name: Parse Auth Configuration
