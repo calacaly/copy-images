@@ -1,4 +1,4 @@
 auths:
-  - domain: registry.cn-shanghai.aliyuncs.com
+  - repository: registry.cn-shanghai.aliyuncs.com
     username: ALIYUN_USER
     password: ALIYUN_PASS

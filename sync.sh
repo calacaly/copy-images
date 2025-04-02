@@ -8,14 +8,14 @@ for ((i = 0; i < length; i++)); do
     password_key=$(yq ".auths[$i].password" auths.yaml)
     username=${!username_key}
     password=${!password_key}
-    domain=$(yq ".auths[$i].domain" auths.yaml)
+    repository=$(yq ".auths[$i].repository" auths.yaml)
     if [[ -z "$username" || -z "$password" ]]; then
-        echo "Error: Could not find credentials for domain $domain"
+        echo "Error: Could not find credentials for repository $repository"
         exit 1
     fi
 
     echo "Logging into $domain as $username"
-    echo "$password" | skopeo login --username "$username" --password-stdin "$domain"
+    echo "$password" | skopeo login --username "$username" --password-stdin "$repository"
 done
 
 
