@@ -6,12 +6,8 @@ length=$(yq '.auths | length' auths.yaml)
 for ((i = 0; i < length; i++)); do
     username_key=$(yq ".auths[$i].username" auths.yaml)
     password_key=$(yq ".auths[$i].password" auths.yaml)
-    username_secret=${!username_key}
-    password_secret=${!password_key}
-    echo "$username_secret"
-    echo "$password_secret"
-    username=$(echo "$username_secret" | base64 -d)
-    password=$(echo "$password_secret" | base64 -d)
+    username=${!username_key}
+    password=${!password_key}
     domain=$(yq ".auths[$i].domain" auths.yaml)
     if [[ -z "$username" || -z "$password" ]]; then
         echo "Error: Could not find credentials for domain $domain"
