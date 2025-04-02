@@ -18,46 +18,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Tools
         run: |
-          sudo apt-get remove -y yq  # 移除旧版本的 yq（如存在）
           sudo apt-get update && sudo apt-get install -y skopeo
-          curl -sL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/bin/yq
-          sudo chmod +x /usr/bin/yq
 
-      - name: Parse Images Configuration
-        id: parse_images
-        run: |
-          # 提取所有镜像配置（source 和 target）
-           images=$(yq e '.images[] | {source: .source, target: .target}' images.yaml)
-          echo "::set-output name=images::$images"
+      - name: Generate and Execute Login Commands
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            yq e '.auths | to_entries[] | 
+                  "docker login \(.key) -u \(.username) -p \(.password)"' auths.yaml | bash
 
-      - name: Parse Auth Configuration
-        id: parse_auths
-        run: |
-          # 提取所有 Registry 的认证信息
-          auths=$(yq e '.auths' auths.yaml)
-          echo "::set-output name=auths::$auths"
-
-          # 提取所有 Registry 域名（基于 auths.yaml）
-          registries=$(echo "$auths" | yq e 'keys | .[]')
-          echo "::set-output name=registries::$registries"
-
-      - name: Login to All Authenticated Registries
-        env:
-          AUTHS_JSON: ${{ steps.parse_auths.outputs.auths }}
-        run: |
-          # 遍历 auths.yaml 中的所有 Registry 并登录
-          for registry in ${{ steps.parse_auths.outputs.registries }}; do
-            username=$(echo "$AUTHS_JSON" | yq e -o=csv ".auths[\"$registry\"].username")
-            password=$(echo "$AUTHS_JSON" | yq e -o=csv ".auths[\"$registry\"].password")
-
-            echo "Logging into $registry..."
-            docker login "$registry" -u "$username" -p "$password"
-          done
-
-      - name: Sync Images
-        env:
-          IMAGES_JSON: ${{ steps.parse_images.outputs.images }}
-        run: |
-          # 遍历所有镜像执行同步
-          echo "$IMAGES_JSON" | yq e '.[] | "Syncing \(.source) -> \(.target)..."'
-          echo "$IMAGES_JSON" | yq e '.[] | "skopeo copy --all docker://\(.source) docker://\(.target)"' | bash
+      - name: Sync Images (Generate & Execute)
+        uses: mikefarah/yq@v4
+        with:
+          cmd: |
+            yq e '.images[] | 
+                  "skopeo copy --all docker://\(.source) docker://\(.target)"' images.yaml | bash
