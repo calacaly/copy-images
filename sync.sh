@@ -10,6 +10,8 @@ for ((i = 0; i < length; i++)); do
     password_secret=${!password_key}
     username=$(echo "$username_secret" | base64 -d)
     password=$(echo "$password_secret" | base64 -d)
+    echo "$username"
+    echo "$password"
     domain=$(yq ".auths[$i].domain" auths.yaml)
     if [[ -z "$username" || -z "$password" ]]; then
         echo "Error: Could not find credentials for domain $domain"
