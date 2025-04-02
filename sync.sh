@@ -25,5 +25,5 @@ for ((i = 0; i < length; i++)); do
     source=$(yq ".images[$i].source" images.yaml)
     target=$(yq ".images[$i].target" images.yaml)
     echo "Syncing image from $source to $target"
-    skopeo sync --src docker --dest docker "$source" "$target"
+    skopeo copy docker://$source docker://$target
 done
