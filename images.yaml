@@ -1,0 +1,3 @@
+images:
+  - source: "docker.io/nginx:latest"
+    target: "registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest"

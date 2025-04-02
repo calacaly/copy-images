@@ -1,0 +1,13 @@
+auths:
+  # docker.io:
+  #   username: ${{ secrets.DOCKERHUB_USER }}
+  #   password: ${{ secrets.DOCKERHUB_PASS }}
+  registry.cn-shanghai.aliyuncs.com:
+    username: ${{ secrets.ALIYUN_USER }}
+    password: ${{ secrets.ALIYUN_PASS }}
+  # quay.io:
+  #   username: ${{ secrets.QUAY_USER }}
+  #   password: ${{ secrets.QUAY_TOKEN }}
+  # harbor.example.com:
+  #   username: admin
+  #   password: ${{ secrets.HARBOR_PASSWORD }}
