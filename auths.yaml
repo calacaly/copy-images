@@ -1,4 +1,4 @@
 auths:
   - domain: registry.cn-shanghai.aliyuncs.com
-    username: ${{ secrets.ALIYUN_USER }}
-    password: ${{ secrets.ALIYUN_PASS }}
+    username: ALIYUN_USER
+    password: ALIYUN_PASS

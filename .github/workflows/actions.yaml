@@ -24,6 +24,10 @@ jobs:
           sudo chmod +x /usr/bin/yq
 
       - name: Sync
+        env:
+          # 在这里列出所有需要的 Secrets
+          ALIYUN_USER: ${{ secrets.ALIYUN_USER }}
+          ALIYUN_PASS: ${{ secrets.ALIYUN_PASS }}
         run: |
           bash sync.sh
         continue-on-error: false
