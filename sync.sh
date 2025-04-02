@@ -4,11 +4,11 @@ set -e  # 确保脚本遇到错误时立即退出
 # 解析 auths.yaml 并登录到每个 registry
 for auth_entry in $(yq e '.auths[]' auths.yaml -o=json); do
     domain=$(echo "$auth_entry" | jq -r '.domain')
-    username_secret=$(echo "$auth_entry" | jq -r '.username_secret')
-    password_secret=$(echo "$auth_entry" | jq -r '.password_secret')
+    username_secret=$(echo "$auth_entry" | jq -r '.username')
+    password_secret=$(echo "$auth_entry" | jq -r '.password')
 
-    username=${!username_secret}
-    password=${!password_secret}
+    username=$(echo "$username_secret" | base64 -d)
+    password=$(echo "$password_secret" | base64 -d)
 
     if [[ -z "$username" || -z "$password" ]]; then
         echo "Error: Could not find credentials for domain $domain"
