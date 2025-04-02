@@ -8,6 +8,7 @@ on:
     paths:
       - "images.yaml"
       - "auths.yaml"
+      - "sync.sh"
       - ".github/workflows/actions.yaml"
 
 jobs:
