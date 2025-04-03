@@ -1,6 +1,6 @@
 # copy-images
 
-利用github workflows来搬运镜像（如从docker.io等国内无法访问的镜像仓库搬运到阿里云等个人免费仓库）
+原理：白嫖github workflows的外网服务器运行脚本来搬运镜像到其他仓库（如从docker.io等国内无法访问的镜像仓库搬运到阿里云等个人免费仓库），推送到其他仓库时需要的账号密码可安全配置（依赖github的secrets）。
 
 # 使用方法
 
@@ -47,4 +47,10 @@ nginx:alpine
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
 docker.io/library/nginx:latest
 nginx:alpine
+```
+# 其他
+## 获取helm镜像列表
+示例
+```bash
+helm template rabbitmq ./rabbitmq | grep "image: " | awk -F 'image: ' '{print $2}' | awk '!seen[$0]++'
 ```
