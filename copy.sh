@@ -14,23 +14,23 @@ for ((i = 0; i < length; i++)); do
         exit 1
     fi
 
-    echo "Logging into $domain as $username"
+    echo "Logging into $repository as $username"
     echo "$password" | skopeo login --username "$username" --password-stdin "$repository"
 done
 
 # 遍历当前目录下的所有 .txt 文件, 执行tools.sh
 find . -type f -name "*.txt" | while IFS= read -r file; do
-    repository=$(cat "$file" | grep "^#" | grep -m 1 "@replace=" | awk -F '@replace=' '{print $2}')
+    replace=$(cat "$file" | grep "^#" | grep -m 1 "@replace=" | awk -F '@replace=' '{print $2}')
     if [ -z "$repository" ]; then
-        echo "Error: Could not find repository in $file"
+        echo "Error: Could not find replace in $file"
         continue
     fi
-    cat "$file" | grep -v "^#" | bash tools.sh to_images $repository --suffix
+    cat "$file" | grep -v "^#" | bash tools.sh to_images $replace --suffix
 done
 cat images.yaml
 
 
-# 解析 images.yaml 并同步镜像`
+# 解析 images.yaml 并复制镜像`
 length=$(yq '. | length' images.yaml)
 for ((i = 0; i < length; i++)); do
     source=$(yq ".[$i].source" images.yaml)

@@ -1,4 +1,4 @@
-# sync-images
+# copy-images
 
 利用github workflows来搬运镜像（如从docker.io等国内无法访问的镜像仓库搬运到阿里云等个人免费仓库）
 
@@ -18,7 +18,7 @@ settings > Security > Secrets and variables > Actions > Secrets > Repository sec
 
 ## 更新镜像要搬运的镜像
 
-更新images.yaml（或者参考推荐使用方式来生成images.yaml）中需要搬运的镜像，然后提交，如果修改了任何sync.sh，images.yaml，auths.yaml，actions.yaml，txt文件，提交的时候都会触发workflows执行。
+更新images.yaml（或者参考推荐使用方式来生成images.yaml）中需要搬运的镜像，然后提交，如果修改了任何copy.sh，images.yaml，auths.yaml，actions.yaml，txt文件，提交的时候都会触发workflows执行。
 
 # 使用工具脚本生成images.yaml
 
@@ -38,7 +38,7 @@ nginx:alpine
 
 # 推荐使用方式
 
-项目中如果存在txt文件，推送到github的时候，sync.sh会遍历所有的txt文件，添加镜像到images.yaml。
+项目中如果存在txt文件，推送到github的时候，copy.sh会遍历所有的txt文件，添加镜像到images.yaml。
 
 需要配置@replace=xxx（只识别第一条），那么示例中docker.io/library/nginx:latest会替换为registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest
 

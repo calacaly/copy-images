@@ -1,5 +1,5 @@
 to_images() {
-    # $1 target repository like registry.cn-shanghai.aliyuncs.com/calacaly
+    # $1 target repository/user like registry.cn-shanghai.aliyuncs.com/calacaly
     # $2 --suffix then target image like registry.cn-shanghai.aliyuncs.com/calacaly/nginx
     while IFS= read -r image; do
         suffix=""
@@ -14,7 +14,7 @@ to_images() {
 
 help() {
     echo "Usage: "
-    echo "cat images.txt | grep -v "^#" | tools.sh to_images <target repository> [--suffix]"
+    echo "cat images.txt | grep -v "^#" | tools.sh to_images <target repository/user> [--suffix]"
 
 }
 

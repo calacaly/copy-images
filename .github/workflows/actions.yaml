@@ -8,12 +8,12 @@ on:
     paths:
       - "images.yaml"
       - "auths.yaml"
-      - "sync.sh"
+      - "copy.sh"
       - "*.txt"
       - ".github/workflows/actions.yaml"
 
 jobs:
-  sync-images:
+  copy-images:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,11 +24,11 @@ jobs:
           sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
           sudo chmod +x /usr/bin/yq
 
-      - name: Sync
+      - name: Copy
         env:
           # 在这里列出所有需要的 Secrets
           ALIYUN_USER: ${{ secrets.ALIYUN_USER }}
           ALIYUN_PASS: ${{ secrets.ALIYUN_PASS }}
         run: |
-          bash sync.sh
+          bash copy.sh
         continue-on-error: false
