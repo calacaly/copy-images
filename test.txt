@@ -1,0 +1,2 @@
+# @replace=registry.cn-shanghai.aliyuncs.com/calacaly
+docker.io/library/rabbitmq
