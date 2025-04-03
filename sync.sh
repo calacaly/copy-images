@@ -27,12 +27,14 @@ find . -type f -name "*.txt" | while IFS= read -r file; do
     fi
     cat "$file" | grep -v "^#" | bash tools.sh to_images $repository --suffix
 done
+cat images.yaml
+
 
 # 解析 images.yaml 并同步镜像`
 length=$(yq '. | length' auths.yaml)
 for ((i = 0; i < length; i++)); do
     source=$(yq ".[$i].source" images.yaml)
     target=$(yq ".[$i].target" images.yaml)
-    echo "Syncing image from $source to $target"
+    echo "Copy image from $source to $target"
     skopeo copy docker://$source docker://$target
 done
