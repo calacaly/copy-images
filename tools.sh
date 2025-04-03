@@ -5,7 +5,7 @@ to_images() {
         suffix=""
         if [ "$2" = "--suffix" ]; then
             # extract suffix
-            suffix=$(basename "$1")
+            suffix=$(basename "$image")
         fi
         echo "- source: $image" >> images.yaml
         echo "  target: $1/$suffix" >> images.yaml
