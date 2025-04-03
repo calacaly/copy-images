@@ -25,7 +25,7 @@ find . -type f -name "*.txt" | while IFS= read -r file; do
         echo "Error: Could not find repository in $file"
         continue
     fi
-    cat "$file" | grep -v "^#" | tools.sh to_images $repository --suffix
+    cat "$file" | grep -v "^#" | bash tools.sh to_images $repository --suffix
 done
 
 # 解析 images.yaml 并同步镜像`
