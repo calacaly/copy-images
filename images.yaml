@@ -1,2 +1,2 @@
-- source: "docker.io/library/nginx:latest"
-  target: "registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest"
+# - source: "docker.io/library/nginx:latest"
+#   target: "registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest"
