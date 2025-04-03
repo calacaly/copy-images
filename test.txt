@@ -1,3 +1,13 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
-docker.io/library/rabbitmq
-postgres
+docker.io/longhornio/longhorn-engine:v1.8.1
+docker.io/longhornio/longhorn-manager:v1.8.1
+docker.io/longhornio/longhorn-instance-manager:v1.8.1
+docker.io/longhornio/longhorn-share-manager:v1.8.1
+docker.io/longhornio/backing-image-manager:v1.8.1
+docker.io/longhornio/support-bundle-kit:v0.0.52
+docker.io/longhornio/csi-attacher:v4.8.1
+docker.io/longhornio/csi-provisioner:v5.2.0
+docker.io/longhornio/csi-node-driver-registrar:v2.13.0
+docker.io/longhornio/csi-resizer:v1.13.2
+docker.io/longhornio/csi-snapshotter:v8.2.0
+docker.io/longhornio/livenessprobe:v2.15.0
