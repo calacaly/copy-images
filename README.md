@@ -18,7 +18,7 @@ settings > Security > Secrets and variables > Actions > Secrets > Repository sec
 
 ## 更新镜像要搬运的镜像
 
-更新images.yaml中需要搬运的镜像，然后提交到自己的镜像仓库。
+更新images.yaml（或者参考推荐使用方式）中需要搬运的镜像，然后提交到自己的镜像仓库。
 
 
 
@@ -40,7 +40,9 @@ nginx:alpine
 
 ## 推荐使用方式
 
-但在项目中如果存在txt文件，推送到github的时候，sync.sh会遍历所有的txt文件，来添加镜像到images.yaml。配置了@replace=xxx（只识别第一条），示例中docker.io/library/nginx:latest会替换为registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest
+项目中如果存在txt文件，推送到github的时候，sync.sh会遍历所有的txt文件，添加镜像到images.yaml。
+
+需要配置@replace=xxx（只识别第一条），那么示例中docker.io/library/nginx:latest会替换为registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest
 
 ```textile
 # images.txt
