@@ -1,7 +1,7 @@
 to_images() {
     # $1 target repository like registry.cn-shanghai.aliyuncs.com/calacaly
     # $2 --suffix then target image like registry.cn-shanghai.aliyuncs.com/calacaly/nginx
-    while IFS=read -r image; do
+    while IFS= read -r image; do
         suffix=""
         if [ "$2" = "--suffix" ]; then
             # extract suffix
