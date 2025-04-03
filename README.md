@@ -38,9 +38,9 @@ docker.io/library/nginx:latest
 nginx:alpine
 ```
 
+## 推荐使用方式
 
-
-但在项目中如果存在txt文件在项目中存在，推送到github的时候，sync.sh会遍历所有的txt文件，来添加镜像到images.yaml。配置了@replace=xxx，示例中docker.io/library/nginx:latest会替换为registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest
+但在项目中如果存在txt文件，推送到github的时候，sync.sh会遍历所有的txt文件，来添加镜像到images.yaml。配置了@replace=xxx（只识别第一条），示例中docker.io/library/nginx:latest会替换为registry.cn-shanghai.aliyuncs.com/calacaly/nginx:latest
 
 ```textile
 # images.txt
