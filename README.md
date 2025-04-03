@@ -1,6 +1,6 @@
 # sync-images
 
-利用github workflows来搬运镜像（如从docker.io等国内无法访问的镜像仓库搬运到阿里云的个人免费仓库）
+利用github workflows来搬运镜像（如从docker.io等国内无法访问的镜像仓库搬运到阿里云等个人免费仓库）
 
 # 使用方法
 
@@ -38,7 +38,7 @@ docker.io/library/nginx:latest
 nginx:alpine
 ```
 
-## 推荐使用方式
+# 推荐使用方式
 
 项目中如果存在txt文件，推送到github的时候，sync.sh会遍历所有的txt文件，添加镜像到images.yaml。
 
