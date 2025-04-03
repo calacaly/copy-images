@@ -9,7 +9,7 @@ on:
       - "images.yaml"
       - "auths.yaml"
       - "sync.sh"
-      - "images.txt"
+      - "*.txt"
       - ".github/workflows/actions.yaml"
 
 jobs:
