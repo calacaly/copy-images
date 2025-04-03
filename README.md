@@ -48,3 +48,9 @@ nginx:alpine
 docker.io/library/nginx:latest
 nginx:alpine
 ```
+# 其他
+## 获取helm镜像列表
+示例
+```bash
+helm template rabbitmq ./rabbitmq | grep "image: " | awk -F 'image: ' '{print $2}' | awk '!seen[$0]++'
+```
