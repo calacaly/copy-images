@@ -1,4 +1,3 @@
-auths:
-  - repository: registry.cn-shanghai.aliyuncs.com
-    username: ALIYUN_USER
-    password: ALIYUN_PASS
+- repository: registry.cn-shanghai.aliyuncs.com
+  username: ALIYUN_USER
+  password: ALIYUN_PASS
