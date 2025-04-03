@@ -18,9 +18,7 @@ settings > Security > Secrets and variables > Actions > Secrets > Repository sec
 
 ## 更新镜像要搬运的镜像
 
-更新images.yaml（或者参考推荐使用方式）中需要搬运的镜像，然后提交到自己的镜像仓库。
-
-
+更新images.yaml（或者参考推荐使用方式来生成images.yaml）中需要搬运的镜像，然后提交，如果修改了任何sync.sh，images.yaml，auths.yaml，actions.yaml，txt文件，提交的时候都会触发workflows执行。
 
 # 使用工具脚本生成images.yaml
 
