@@ -46,5 +46,5 @@ nginx:alpine
 # images.txt
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
 docker.io/library/nginx:latest
-nginx:alpin
+nginx:alpine
 ```
