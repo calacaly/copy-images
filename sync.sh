@@ -31,7 +31,7 @@ cat images.yaml
 
 
 # 解析 images.yaml 并同步镜像`
-length=$(yq '. | length' auths.yaml)
+length=$(yq '. | length' images.yaml)
 for ((i = 0; i < length; i++)); do
     source=$(yq ".[$i].source" images.yaml)
     target=$(yq ".[$i].target" images.yaml)
