@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
-ghcr.io/coroot/coroot-operator:1.2.4
+rancher/nginx-ingress-controller:nginx-1.7.0-rancher
