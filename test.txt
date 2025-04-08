@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
-longhornio/longhorn-ui:v1.8.1
+ghcr.io/coroot/coroot-operator:1.2.4
