@@ -25,7 +25,7 @@ settings > Security > Secrets and variables > Actions > Secrets > Repository sec
 ```bash
 # 使用示例 其中registry.cn-shanghai.aliyuncs.com/calacaly可以改为你要搬运的目标仓库地址
 
-cat images.txt | grep -v "#" | bash tools.sh to_images registry.cn-shanghai.aliyuncs.com/calacaly --suffix
+cat images.txt | grep -v "#" | bash tools.sh to_images registry.cn-shanghai.aliyuncs.com/calacaly/ --suffix
 ```
 
 images.txt就是纯粹的原始镜像列表，可以存在#注释
@@ -44,7 +44,7 @@ nginx:alpine
 
 ```textile
 # images.txt
-# @replace=registry.cn-shanghai.aliyuncs.com/calacaly
+# @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
 docker.io/library/nginx:latest
 nginx:alpine
 ```
