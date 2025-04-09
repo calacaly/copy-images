@@ -1,3 +1,2 @@
-# @replace=registry.cn-shanghai.aliyuncs.com/calacaly/kubeskoop-
-kubeskoop/agent:v1.0.0-rc.1
-kubeskoop/controller:v1.0.0-rc.1
+# @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
+docker.io/bitnami/grafana-loki:3.4.3-debian-12-r0
