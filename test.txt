@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-ghcr.io/coroot/kube-state-metrics:2.15.0-ubi9-0
+otel/opentelemetry-collector:0.122.1
