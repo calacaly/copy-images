@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-ghcr.io/coroot/coroot-node-agent:1.23.15
+ghcr.io/coroot/coroot-cluster-agent:1.2.2
