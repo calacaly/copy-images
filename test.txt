@@ -1,2 +1,7 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-otel/opentelemetry-collector:0.122.1
+registry.odigos.io/odigos-odiglet:v1.0.169
+registry.odigos.io/odigos-autoscaler:v1.0.169
+registry.odigos.io/odigos-instrumentor:v1.0.169
+registry.odigos.io/odigos-scheduler:v1.0.169
+registry.odigos.io/odigos-ui:v1.0.169
+registry.odigos.io/odigos-cli:v1.0.169
