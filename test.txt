@@ -1,7 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
-ghcr.io/microsoft/retina/retina-operator:v0.0.30
-ghcr.io/microsoft/retina/retina-agent:v0.0.30
-ghcr.io/microsoft/retina/retina-init:v0.0.30
-mcr.microsoft.com/oss/cilium/hubble-ui-backend:v0.12.2
-mcr.microsoft.com/oss/cilium/hubble-ui:v0.12.2
-mcr.microsoft.com/oss/cilium/hubble-relay:v1.15.0
+mcr.microsoft.com/oss/cilium/certgen:v0.1.9
