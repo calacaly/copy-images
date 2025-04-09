@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-docker.io/bitnami/nginx:1.27.4-debian-12-r7
+ghcr.io/coroot/coroot-operator:1.2.4
