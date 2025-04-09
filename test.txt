@@ -1,2 +1,7 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly
-rancher/nginx-ingress-controller:nginx-1.7.0-rancher1
+quay.io/operator-framework/olm@sha256:1b6002156f568d722c29138575733591037c24b4bfabc67946f268ce4752c3e6
+quay.io/operator-framework/configmap-operator-registry:latest
+quay.io/operator-framework/opm@sha256:d999588bd4e9509ec9e75e49adfb6582d256e9421e454c7fb5e9fe57e7b1aada
+gcr.io/pixie-oss/pixie-prod/operator/bundle_index:0.0.1
+ghcr.io/pixie-io/pixie-oss-pixie-dev-public-curl:multiarch-7.87.0@sha256:f7f265d5c64eb4463a43a99b6bf773f9e61a50aaa7cefaf564f43e42549a01dd
+gcr.io/pixie-oss/pixie-prod/operator-vizier_deleter:0.1.7
