@@ -1,3 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-prom/prometheus
-clickhouse:lts
+ghcr.io/coroot/coroot:1.9.10
