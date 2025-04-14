@@ -1,4 +1,4 @@
-# @replace=registry.cn-shanghai.aliyuncs.com/calacaly/rancher/
+# @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
 rancher/mirrored-coreos-etcd:v3.5.15
 rancher/rke-tools:v0.1.111
 rancher/mirrored-k8s-dns-kube-dns:1.23.0
