@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-bitnami/kubectl:1.29
+bitnami/kubectl:1.28
