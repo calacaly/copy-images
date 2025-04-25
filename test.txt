@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-velero/velero:v1.16.0
+bitnami/kubectl:1.29
