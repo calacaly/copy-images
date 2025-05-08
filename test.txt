@@ -1,2 +1,3 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-rancher/rke-tools:v0.1.90
+#rancher/rke-tools:v0.1.90
+rancher/hyperkube:v1.26.8-rancher1
