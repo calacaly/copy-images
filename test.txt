@@ -1,4 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-velero/velero-plugin-for-aws:v1.10.0
-velero/velero:v1.15.2
-docker.io/bitnami/kubectl:1.32
+rancher/rke-tools:v0.1.90
