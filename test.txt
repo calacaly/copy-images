@@ -1,20 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-#rancher/rke-tools:v0.1.90
-#rancher/hyperkube:v1.26.8-rancher1
-rancher/mirrored-coreos-etcd:v3.5.6
-rancher/mirrored-k8s-dns-kube-dns:1.22.20
-rancher/mirrored-k8s-dns-dnsmasq-nanny:1.22.20
-rancher/mirrored-k8s-dns-sidecar:1.22.20
-rancher/mirrored-cluster-proportional-autoscaler:1.8.6
-rancher/mirrored-coredns-coredns:1.9.4
-rancher/mirrored-k8s-dns-node-cache:1.22.20
-rancher/mirrored-calico-node:v3.25.0
-rancher/calico-cni:v3.25.0-rancher1
-rancher/mirrored-calico-kube-controllers:v3.25.0
-rancher/mirrored-calico-ctl:v3.25.0
-rancher/mirrored-calico-pod2daemon-flexvol:v3.25.0
-rancher/mirrored-pause:3.7
-rancher/nginx-ingress-controller:nginx-1.7.0-rancher1
-rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher1
-rancher/mirrored-ingress-nginx-kube-webhook-certgen:v20230312-helm-chart-4.5.2-28-g66a760794
-rancher/mirrored-metrics-server:v0.6.3
+apache/kafka
