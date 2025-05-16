@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-apache/kafka
+registry.developers.crunchydata.com/crunchydata/chrunchy-pgbackrest:ubi8-2.41-2
