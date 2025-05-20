@@ -1,6 +1,4 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.41-2
-registry.developers.crunchydata.com/crunchydata/crunchy-postgres-exporter:ubi8-5.3.0-0
-registry.developers.crunchydata.com/crunchydata/crunchy-pgadmin4:ubi8-4.30-8
-registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-14.6-2
-registry.developers.crunchydata.com/crunchydata/crunchy-pgbouncer:ubi8-1.17-5
+rabbitmq4.0.3
+Postgresql14.18
+openjdk17
