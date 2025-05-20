@@ -1,3 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-rabbitmq:4.0.3-management
-postgres:14.18
+openjdk:17
