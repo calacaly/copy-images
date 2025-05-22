@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-openjdk:17
+timonwong/prometheus-webhook-dingtalk:latest
