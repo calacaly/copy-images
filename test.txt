@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-timonwong/prometheus-webhook-dingtalk:latest
+casbin/casdoor
