@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-postgres:12
+ankane/pgvector:14
