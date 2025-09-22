@@ -1,2 +1,24 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-container-registry.oracle.com/database/free:latest
+docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+docker.elastic.co/kibana/kibana:8.14.3
+downloads.unstructured.io/unstructured-io/unstructured-api:latest
+ghcr.io/chroma-core/chroma:0.5.20
+langgenius/dify-api:2.0.0-beta.2
+langgenius/dify-plugin-daemon:0.3.0b1-local
+langgenius/dify-sandbox:0.2.12
+langgenius/dify-web:2.0.0-beta.2
+langgenius/qdrant:v1.7.3
+matrixorigin/matrixone:2.1.1
+milvusdb/milvus:v2.5.15
+minio/minio:RELEASE.2023-03-20T20-16-18Z
+myscale/myscaledb:1.6.4
+oceanbase/oceanbase-ce:4.3.5-lts
+opengauss/opengauss:7.0.0-RC1
+pgvector/pgvector:pg16
+postgres:15-alpine
+quay.io/coreos/etcd:v3.5.5
+redis:6-alpine
+semitechnologies/weaviate:1.19.0
+tensorchord/pgvecto-rs:pg16-v0.3.0
+ubuntu/squid:latest
+vastdata/vastbase-vector
