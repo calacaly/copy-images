@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-ankane/pgvector:v0.5.1
+container-registry.oracle.com/database/free:latest
