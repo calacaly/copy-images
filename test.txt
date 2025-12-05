@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-ubuntu/squid:latest
+ziqinzhou/zegclip:latest
