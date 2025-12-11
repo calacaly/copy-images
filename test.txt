@@ -1,2 +1,3 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-ziqinzhou/zegclip:latest
+opensearchproject/opensearch:latest
+opensearchproject/opensearch-dashboards:latest
