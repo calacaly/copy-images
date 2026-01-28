@@ -1,2 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
- centos:stream8
+ centos:8
