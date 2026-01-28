@@ -1,3 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-opensearchproject/opensearch:latest
-opensearchproject/opensearch-dashboards:latest
+ubuntu:20.04
