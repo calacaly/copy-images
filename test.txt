@@ -1,3 +1,2 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-mysql:8
-redis:6-alpine
+eclipse-temurin:21-jre
