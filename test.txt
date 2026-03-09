@@ -1,2 +1,3 @@
 # @replace=registry.cn-shanghai.aliyuncs.com/calacaly/
-eclipse-temurin:21-jre
+node:22-slim
+nginx:stable-alpine
